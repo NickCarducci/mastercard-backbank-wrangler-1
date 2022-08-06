@@ -1,6 +1,6 @@
 [package]
 edition = "2021"
-name = "eglue" # "src/source/eglue"
+name = "eglue" # "src/source/eglue" 
 version = "0.1.0"    # obey semver
 authors = ["Nick Carducci <nmcarducci@gmail.com>"]
 [package.metadata.wasm-pack.profile.release]
