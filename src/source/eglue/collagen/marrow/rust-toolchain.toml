@@ -1,0 +1,11 @@
+# [toolchain] # <channel>[-<date>][-<host>] # https://rust-lang.github.io/rustup/concepts/toolchains.html
+# (date = "") YYYY-MM-DD
+# (host = "") <target-triple>
+[toolchain]
+profile = "default"
+channel = "nightly" # stable|beta|nightly|<major.minor>|<major.minor.patch> (e.g. 1.62.0)
+
+# rust bindgen arguments
+# rust wasm arguments
+# https://hacks.mozilla.org/2018/04/javascript-to-rust-and-back-again-a-wasm-bindgen-tale/
+# https://stackoverflow.com/questions/24047686/default-function-arguments-in-rust

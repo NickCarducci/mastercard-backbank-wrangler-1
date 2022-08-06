@@ -1,0 +1,8 @@
+{
+    "name": "mastercard-backbank/vaults",
+    "description": "mastercard worker for vaumoney of vaults.biz",
+    "license": "none",
+    "require": {
+        "pear/xml_serializer": "^0.22.0"
+    }
+}

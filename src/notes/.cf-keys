@@ -1,0 +1,3 @@
+ACCOUNT_ID="9ddca7c9df604668fc6d14f079b2f066"
+API_EMAIL=nmcarducci@gmail.com
+API_KEY=${{secrets.CF_API_KEY}}

@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "name": "mastercard-backbank",
+  "version": "1.0.0",
+  "description": "mastercard worker for vaumoney of vaults.biz",
+  "module": "./dist/shim.mjs",
+  "scripts": {
+    "roll": "browserify src/browseri.js > src/browserii.js && npm run roll",
+    "sourcemap": "browserify src/browseri.js --debug | exorcist src/browserii.js.map > src/browserii.js && npm run roll",
+    "build2": "browserify src/browseri.js -p [ @jsdevtools/browserify-banner --template \"module.exports = \" ] > src/browserii.js && npm run roll",
+    "build3": "rollup -c",
+    "build": "node src/browserify.js && rollup -c",
+    "echo": "echo \"Build placeholder\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
+  "author": "Nick <nmcarducci@gmail.com>",
+  "license": "UNLICENSED", 
+  "dependencies": {
+    "cors": "2.8.5",
+    "mastercard-locations": "1.0.3",
+    "mastercard-places": "1.0.5"
+  },
+  "devDependencies": {
+    "@jsdevtools/browserify-banner": "2.0.4",
+    "@rollup/plugin-commonjs": "20.0.0",
+    "@rollup/plugin-json": "4.1.0",
+    "@rollup/plugin-node-resolve": "13.0.4",
+    "@rollup/plugin-replace": "3.0.0",
+    "browserify": "17.0.0",
+    "exorcist": "2.0.0",
+    "requirejs": "2.3.6",
+    "rollup": "2.56.3",
+    "rollup-plugin-auto-external": "2.0.0",
+    "rollup-plugin-polyfill-node": "0.7.0",
+    "rollup-plugin-terser": "7.0.2",
+    "rollup-plugin-webworkify": "0.0.4",
+    "webworkify": "1.5.0"
+  },
+  "targets": {
+    "browser": {
+      "scopeHoist":true,
+      "engines": {
+        "browsers": "> 0.25%"
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "private": true,
+  "name": "mastercard-backbank",
+  "version": "1.0.0",
+  "description": "mastercard worker for vaumoney of vaults.biz",
+  "main": "src/shim.mjs",
+  "scripts": {
+    "build":"",
+    "course": "npm run bcargo && npm run bwasm",
+    "bcargo": "cd eglue && cargo install cargo-expand && cargo build --target wasm32-unknown-unknown -Zbuild-std",
+    "bcargo1": "cd eglue && cargo install cargo-expand && rustup override set stable && cargo build && cargo expand --lib lib",
+    "bwasm": "wasm-pack build eglue --target web --out-dir glue --out-name index",
+    "bwasm1": "rustup target add wasm32-unknown-unknown && wasm-pack build eglue --target web --out-dir glue --out-name index",
+    "buildx": "npm run course && rollup -c",
+    "buildr": "rollup -c",
+    "build4": "cd src/source/eglue && cargo run start && wasm-pack build --target web --out-dir glue --out-name index && cd ../../.. && rollup -c",
+    "build3": "node src/rollup.mjs && rollup -c",
+    "build1": "npx emsdk-checkout && npx emsdk install <version> && npx emsdk activate <version> && node run emcc",
+    "emcc": "cd src/ && npx emsdk-run emscript.sh && cd .. && rollup -c",
+    "build2": "babel src/PHP -o src/babelphp.js && rollup -c",
+    "format": "prettier --write '**/*.{mjs,js,css,json,md}'"
+  },
+  "author": "Nick <nmcarducci@gmail.com>",
+  "license": "UNLICENSED", 
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@rollup/plugin-node-resolve": "13.3.0",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-wasm": "5.2.0",
+    "prettier": "^1.18.2",
+    "rollup": "2.56.3",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-external-globals": "0.6.1",
+    "rollup-plugin-polyfill-node": "0.7.0",
+    "rollup-plugin-spawn-process": "0.0.1",
+    "rollup-plugin-terser": "7.0.2",
+    "wasm-pack": "0.10.3"
+  }, 
+  "false":{
+     "main": "dist/shim.mjs",
+     "build": "$npm_execpath https://gist.github.com/coryhouse/b26f49bead69066844d9?permalink_comment_id=3723118#gistcomment-3723118",
+     "@rollup/plugin-inject": "^4.0.0",
+     "@babel/helper-plugin-utils": "^7.17.12",
+     "@babel/parser": "^7.18.4",
+     "emscripten-sdk-npm": "^0.3.2",
+     "babel-preset-php": "^2.0.0",
+     "php-parser": "^3.1.0-beta.7"
+  }
+}

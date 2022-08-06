@@ -1,0 +1,6 @@
+# [toolchain] # <channel>[-<date>][-<host>] # https://rust-lang.github.io/rustup/concepts/toolchains.html
+# (date = "") YYYY-MM-DD
+# (host = "") <target-triple>
+[toolchain]
+profile = "default"
+channel = "nightly" # stable|beta|nightly|<major.minor>|<major.minor.patch> (e.g. 1.62.0)

@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "private": true,
+  "name": "mastercard-backbank",
+  "version": "1.0.0",
+  "description": "mastercard worker for vaumoney of vaults.biz",
+  "module": "./dist/index.mjs",
+  "scripts": {
+    "build": "node src/rollup.js"
+  },
+  "author": "Nick <nmcarducci@gmail.com>",
+  "license": "UNLICENSED", 
+  "devDependencies": {
+    "@babel/core": "7.15.0",
+    "@babel/preset-env": "^7.14.8",
+    "@rollup/plugin-babel": "5.3.0",
+    "@rollup/plugin-node-resolve": "13.0.4",
+    "mastercard-locations": "1.0.3",
+    "mastercard-places": "1.0.5",
+    "rollup": "2.56.3",
+    "rollup-plugin-polyfill-node": "0.7.0"
+  }
+}

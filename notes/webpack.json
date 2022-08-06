@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "name": "mastercard-backbank",
+  "version": "1.0.0",
+  "description": "mastercard worker for vaumoney of vaults.biz",
+  "type": "module",
+  "module": "dist/shim.mjs",
+  "scripts": {
+    "rollup": "npx rollup src/index.js --file dist/index.js --format es",
+    "build": "npx parcel build src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
+  "author": "Nick <nmcarducci@gmail.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "assert": "2.0.0",
+    "browserify-zlib": "0.2.0",
+    "buffer": "6.0.3",
+    "cors": "2.8.5",
+    "crypto-browserify": "3.12.0",
+    "https-browserify": "1.0.0",
+    "mastercard-locations": "1.0.3",
+    "mastercard-places": "1.0.5",
+    "path-browserify": "1.0.1",
+    "prettier": "^1.18.2",
+    "process": "0.11.10",
+    "querystring-es3": "0.2.1",
+    "stream-browserify": "3.0.0",
+    "stream-http": "3.2.0",
+    "url": "0.11.0",
+    "util": "0.12.4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "20.0.0",
+    "@rollup/plugin-node-resolve": "13.0.4",
+    "parcel": "2.0.0",
+    "rollup": "2.56.3",
+    "rollup-plugin-auto-external": "2.0.0"
+  }
+}

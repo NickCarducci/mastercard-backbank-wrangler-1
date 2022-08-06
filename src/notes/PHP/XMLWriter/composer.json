@@ -1,0 +1,25 @@
+
+{
+    "name": "nickcarducci/mastercard_backbank/XMLWriter",
+    "description": "XMLWriter",
+    "license": "",
+    "keywords": [
+        "write",
+        "xmlwriter",
+        "xml"
+    ],
+    "homepage": "https://vau.money",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": "^7.3 || ~8.0.0 || ~8.1.0",
+        "ext-dom": "*",
+        "ext-simplexml": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Backbank\\": "src/PHP/XMLWriter/"
+        }
+    }
+}

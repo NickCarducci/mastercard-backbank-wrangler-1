@@ -1,0 +1,38 @@
+[package]
+edition = "2021"
+name = "eglue" # "src/source/eglue"
+version = "0.1.0"    # obey semver
+authors = ["Nick Carducci <nmcarducci@gmail.com>"]
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+[dependencies]
+# web-sys = "0.3.57"
+# wasm-bindgen = "0.2.81"
+# workers-rs = "0.0.10"
+# worker-build = "0.0.4"
+cc = "1.0"
+worker = "0.0.10"
+# wasm-bindgen-futures = "0.4.31"
+url = "2.2.2" 
+# ensure = "0.3.0"
+cfg-if = "1.0.0"
+console_error_panic_hook = { version = "0.1.7", optional = true }
+# assert-type-eq = "0.1.0"
+serde = { version = "1.0.137", features = ["derive"] }
+serde_json = "1.0.81"
+# paste = "1.0.7"
+# assert_matches = "1.5.0"
+# meval = "0.2.0"
+
+[dependencies.web-sys]
+version = "0.3"
+features = ["Response","Request", "Url" ] # ResponseInit
+
+[lib]
+#edition = "2021"
+name = "build"
+path = "lib.rs"
+crate-type = ["cdylib", "rlib"] # "rlib"
+
+# https://rustwasm.github.io/docs/wasm-pack/tutorials/npm-browser-packages/template-deep-dive/cargo-toml.html
+

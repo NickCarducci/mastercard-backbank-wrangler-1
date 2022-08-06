@@ -1,0 +1,4 @@
+[toolchain]
+profile = "default"
+channel = "stable"
+# https://github.com/NickCarducci/eglue/blob/maintenance/rust-toolchain.toml

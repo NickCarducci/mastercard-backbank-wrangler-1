@@ -1,0 +1,38 @@
+[1]  Document        ::=  Header* Definition*
+[2]  Header          ::=  Include | CppInclude | Namespace
+[3]  Include         ::=  'include' Literal
+[4]  CppInclude      ::=  'cpp_include' Literal
+[5]  Namespace       ::=  ( 'namespace' ( cpp Global ) )
+
+service php2cpp {
+ string php2cpp()
+}
+
+#include "php2cpp.h";
+
+using namespace apache::thrift::transport;
+using namespace apache::thrift::protocol;
+using std::shared_ptr;
+using std::make_shared;
+
+int main() {
+ shared_ptr<TTransport> trans;
+  trans = make_shared<TSocket>("Localhost",9090);
+  trans = make_shared<TBufferedTransport>(trans);
+  auto proto = make_shared<TBinaryProtocol>(trans);
+  helloSvcClient client(proto);
+  
+  try (
+   trans->open();
+   std::string msg;
+   client.getMessage(msg, "world!");
+   std:cout << msg << std.endl;
+  ) catch(...) {
+   std:cout << "Client caught an e" << std::endl;
+  }
+  trans->close();
+}
+client as c++ served by php
+thrift --gen cpp php2cpp.thrift
+thrift -r --gen cpp php2cpp.thrift
+g++ --std=c++17 -L$HOME/thrift/lib -Igen-cpp:$HOME/thrift/include/thrift -o client client.cpp gen-cpp/Example.cpp -lthrift

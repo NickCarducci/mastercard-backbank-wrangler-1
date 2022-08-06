@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "mastercard-backbank",
+  "version": "1.0.0",
+  "description": "mastercard worker for vaumoney of vaults.biz",
+  "module": ".././browserii.js",
+  "author": "Nick <nmcarducci@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "mastercard-locations": "1.0.3",
+    "mastercard-places": "1.0.5"
+  }
+}

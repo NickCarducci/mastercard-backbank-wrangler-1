@@ -1,0 +1,10 @@
+{
+  "body_part":"script",
+  "bindings": [
+    {
+      "name":"MasterCard-BackBank",
+      "type":"wasm_module",
+      "part":"wasm"
+    }
+  ]
+}

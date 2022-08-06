@@ -1,0 +1,31 @@
+[package]
+edition = "2021"
+name = "eglue" # "src/source/eglue"
+version = "0.1.0"    # obey semver
+authors = ["Nick Carducci <nmcarducci@gmail.com>"]
+[dependencies]
+# async-std = "1.10.0"
+# async-trait = "0.1.56"
+# rusty_pool = "0.7.0"
+wasm-bindgen-futures = "0.4.31"
+wasm-bindgen = "0.2"
+futures = "0.3.21"
+js-sys = "0.3.58" 
+bindgen = "0.53.1"
+# promise-rs = "0.3.0" not working
+# spmc = "0.3.0"
+cc = "1.0"
+# canonical compilation-logger/watcher
+# log = "0.4.0"
+# env_logger = "0.8.4"
+
+[build]
+target = "wasm32-unknown-unknown"
+
+[lib]
+edition = "2021"
+name = "build"
+path = "./lib.rs"
+crate-type = ["cdylib"] # "rlib"
+
+# https://rustwasm.github.io/docs/wasm-pack/tutorials/npm-browser-packages/template-deep-dive/cargo-toml.html

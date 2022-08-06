@@ -1,0 +1,1 @@
+### [What concept in programming is commonly misunderstood even by experienced programmers](https://www.quora.com/What-concept-in-programming-is-commonly-misunderstood-even-by-experienced-programmers/answer/Nick-Carducci)?

@@ -1,0 +1,36 @@
+[package]
+edition = "2021"
+name = "eglue" # "src/source/eglue"
+version = "0.1.0"    # obey semver
+authors = ["Nick Carducci <nmcarducci@gmail.com>"]
+[dependencies]
+wasm-bindgen-futures = "0.4.31"
+wasm-bindgen = "0.2"
+bindgen = "0.53.1"
+# promise-rs = "0.3.0" not working
+cc = "1.0"
+# canonical compilation-logger/watcher
+log = "0.4.0"
+env_logger = "0.8.4"
+# coding suggestions
+# rustfmt = "1.5.1"
+# or
+# {"rust-client.rustupPath": "~/.cargo/bin/rustup"} in VS code settings
+# https://stackoverflow.com/questions/58312319/couldnt-start-client-rust-language-server
+# [build-dependencies]
+# doc.rust-lang.org/cargo/reference/cargo-targets.html#configuring-a-target
+# [[bin]] # Configuring a Target [lib], [[bin]], [[example]], [[test]], and [[bench]]
+# edition = "2021"
+# name = "start"
+# path = "./lib.rs" # `cargo expand --lib lib` from `npm run` 
+# crate-type = ["rlib"] # `rust` file
+# https://stackoverflow.com/questions/70549057/unresolved-import-thiserror-when-expanding-the-code-with-rustc-zunpretty-exp
+# https://github.com/dtolnay/cargo-expand/issues/8#issuecomment-453920573
+
+[lib]
+edition = "2021"
+name = "build"
+path = "./lib.rs"
+crate-type = ["cdylib"] # "rlib"
+
+# https://rustwasm.github.io/docs/wasm-pack/tutorials/npm-browser-packages/template-deep-dive/cargo-toml.html

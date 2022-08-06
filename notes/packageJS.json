@@ -1,0 +1,45 @@
+{
+  "type": "module",
+  "private": true,
+  "name": "mastercard-backbank",
+  "version": "1.0.0",
+  "description": "mastercard worker for vaumoney of vaults.biz",
+  "main": "./index.js",
+  "scripts": {
+    "module": "./dist/shim.mjs",
+    "dev1": "ncc run shim.mjs",
+    "build": "babel index.php -o index.js",
+    "build2": "ncc build shim.mjs -o build && rollup -c",
+    "build0": "rollup -c",
+    "build1": "node src/rollup && rollup -c"
+  },
+  "author": "Nick <nmcarducci@gmail.com>",
+  "license": "UNLICENSED", 
+  "devDependencies": {
+    "@babel/core": "7.15.0",
+    "@babel/preset-env": "^7.14.8",
+    "@rollup/plugin-alias": "3.1.9",
+    "@rollup/plugin-babel": "5.3.0",
+    "@rollup/plugin-commonjs": "21.0.1",
+    "@rollup/plugin-node-resolve": "13.0.4",
+    "@rollup/plugin-virtual": "2.1.0",
+    "@vercel/ncc": "latest",
+    "abstract-syntax-tree": "2.20.5",
+    "cors": "2.8.5",
+    "astring": "1.8.1",
+    "miniflare": "2.3.0",
+    "mastercard-locations": "1.0.3",
+    "mastercard-places": "1.0.5",
+    "picomatch": "2.3.1",
+    "rollup": "2.56.3",
+    "rollup-plugin-external-globals": "0.6.1",
+    "rollup-plugin-polyfill-node": "0.7.0",
+    "rollup-plugin-terser": "7.0.2"
+  }, 
+  "dependencies": {
+    "babel-preset-php": "^2.0.0"
+  },
+  "bin": {
+    "require": "./src/dependencies/shim.mjs"
+  }
+}
